@@ -1,0 +1,64 @@
+{
+  "name": "web-bnb-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run start-ui\" \"npm run start-api\" --kill-others",
+    "start-ui": "react-scripts start || react-scripts --openssl-legacy-provider start",
+    "start-api": "cd mock-server && nodemon server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll --runInBand",
+    "test-summary": "npm-run-all --sequential --continue-on-error --silent create-test-summary open-test-summary",
+    "create-test-summary": "react-scripts test --watchAll=false --reporters=\"jest-html-reporter\"",
+    "open-test-summary": "open-cli ./test-report.html",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "classnames": "^2.2.6",
+    "jest-html-reporter": "^3.4.1",
+    "lodash.isequal": "^4.5.0",
+    "npm-run-all": "^4.1.5",
+    "open-cli": "^6.0.1",
+    "rc-slider": "^9.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.2.1",
+    "react-toggle": "^4.1.2",
+    "sass": "1.32.*",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "eslint": "^7.21.0",
+    "nodemon": "^2.0.7"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "proxy": "http://localhost:3001",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=10.12.0",
+    "npm": ">=6.0.0"
+  }
+}

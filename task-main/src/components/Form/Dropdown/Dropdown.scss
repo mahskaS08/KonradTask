@@ -1,0 +1,6 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.react-select-container {
+    @include react-select-styling();
+}

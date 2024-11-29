@@ -1,0 +1,63 @@
+@import "../../styles/breakpoints.scss";
+
+.property-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $breakpoint-desktop-lg;
+  padding: 0 3rem;
+
+  .property-info-section {
+    display: inline-block;
+    width: 66%;
+  }
+
+  .property-booking-section {
+    width: 33%;
+    vertical-align: top;
+    display: inline-block;
+  }
+}
+@import "../../styles/breakpoints.scss";
+
+.property-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $breakpoint-desktop-lg;
+  margin: 0 auto;
+  padding: 0 3rem;
+
+  .property-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .property-info-section {
+    flex-grow: 1;
+    width: 100%;
+    order: 2;
+  }
+
+  .property-booking-section {
+    width: 100%;
+    order: 1;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    .property-content {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .property-info-section {
+      flex-grow: 1;
+      width: calc(100% - 18rem);
+      order: initial;
+    }
+
+    .property-booking-section {
+      width: 18rem;
+      flex-shrink: 0;
+      order: initial;
+    }
+  }
+}
